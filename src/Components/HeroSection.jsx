@@ -9,10 +9,10 @@ import {
   FaTools,
   FaCheckCircle,
 } from "react-icons/fa";
-import bg1 from "../assets/images/hero/bg1.jpg";
+import bg1 from "../assets/images/hero/bg5.png";
 import bg2 from "../assets/images/hero/bg1.jpg";
-import bg3 from "../assets/images/hero/bg1.jpg";
-import bg4 from "../assets/images/hero/bg1.jpg";
+import bg3 from "../assets/images/hero/bg4.png";
+import bg4 from "../assets/images/hero/bg2.png";
 
 const images = [bg1, bg2, bg3, bg4];
 
