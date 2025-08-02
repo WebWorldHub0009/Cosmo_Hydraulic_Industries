@@ -14,7 +14,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import VisitorCounter from "./VisitorCounter";
 import Translator from "./Translator";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo3d.png";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -55,10 +55,10 @@ export default function Footer() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-sm z-10 relative">
         {/* About Cosmo Hydraulic Industries */}
-        <div className="flex flex-col space-y-3">
+        <div className="flex flex-col space-y-3 mt-2">
           <img src={logo} alt="Cosmo Hydraulic Industries Logo" className="w-[80px] md:w-[150px]" />
-          <h4 className="text-blue-900 font-semibold mb-2">About Cosmo Hydraulic</h4>
-          <p className="leading-relaxed text-gray-800">
+          <h4 className="text-blue-900 font-semibold mt-6">About Cosmo Hydraulic</h4>
+          <p className="leading-relaxed text-gray-800 ">
             Cosmo Hydraulic Industries, based in Surajpur, Greater Noida, is a trusted name in high-performance hydraulic fittings and industrial solutions — offering precision manufacturing with innovation since inception.
           </p>
         </div>
