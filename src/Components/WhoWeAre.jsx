@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 // Replace with your actual image paths
 import img1 from "../assets/images/hero/bg1.jpg";
-import img2 from "../assets/images/hero/bg1.jpg";
-import img3 from "../assets/images/hero/bg1.jpg";
+import img2 from "../assets/images/hero/bg2.png";
+import img3 from "../assets/images/hero/bg4.png";
 
 const services = [
   {
