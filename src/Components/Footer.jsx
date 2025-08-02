@@ -65,7 +65,7 @@ export default function Footer() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-sm z-10 relative text-gray-200">
         {/* About Cosmo Hydraulic Industries */}
         <div className="flex flex-col space-y-3 mt-2">
-          <img src={logo} alt="Cosmo Hydraulic Industries Logo" className="w-[150px] md:w-[150px]" />
+          <img src={logo} alt="Cosmo Hydraulic Industries Logo" className="w-[150px] md:w-[200px]" />
           <h4 className="text-blue-300 font-semibold mt-6">About Cosmo Hydraulic</h4>
           <p className="leading-relaxed text-gray-300">
             Cosmo Hydraulic Industries, based in Surajpur, Greater Noida, is a trusted name in
