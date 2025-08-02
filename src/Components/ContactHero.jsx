@@ -31,7 +31,7 @@ const ContactHero = () => {
           className="flex justify-center mb-5"
         >
           <div className="p-5 bg-[#3b82f6]/20 rounded-full border border-[#3b82f6] shadow-lg animate-pulse">
-            <FaPhoneAlt className="text-4xl text-[#3b82f6]" />
+            <FaPhoneAlt className="md:text-4xl text-3xl text-[#3b82f6]" />
           </div>
         </motion.div>
 

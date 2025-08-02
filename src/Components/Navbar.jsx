@@ -16,7 +16,7 @@ import {
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa";
-import logo from "../assets/images/logo2d.png";
+import logo from "../assets/images/newlogo2d.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,7 +35,7 @@ const Navbar = () => {
       {/* Top Header */}
       <div className="bg-[#2d2d2d] text-gray-200 text-sm px-4 py-2 flex flex-wrap justify-between items-center">
         <div className="hidden md:flex flex-col sm:flex-row gap-x-6 gap-y-1">
-          <span>UDYAM-UP-28-0082609</span>
+          <span className="text-sm md:text-md">UDYAM-UP-28-0082609</span>
           <span>GSTIN: 09BFSPK5332M1ZS</span>
         </div>
         <div className="flex gap-4 items-center mt-1 sm:mt-0">
@@ -60,7 +60,7 @@ const Navbar = () => {
       <nav className="bg-[#1b1f23] text-white px-6 py-3 flex justify-between items-center border-b border-[#3b82f6]">
         {/* Logo */}
         <Link to="/">
-          <img src={logo} alt="Cosmo Hydraulic Logo" className="h-14 w-auto object-contain" />
+          <img src={logo} alt="Cosmo Hydraulic Logo" className="h-10 md:h-14 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}
@@ -69,10 +69,10 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.href}
-              className="flex items-center gap-2 hover:text-[#3b82f6] transition duration-300 relative group"
+              className="flex items-center gap-4 hover:text-[#3b82f6] transition duration-300 relative group"
             >
               {link.name}
-              <span className="block w-0 h-[2px] bg-[#3b82f6] transition-all duration-300 group-hover:w-full"></span>
+              {/* <span className="block w-0 h-[2px] bg-[#3b82f6] transition-all duration-300 group-hover:w-full"></span> */}
             </Link>
           ))}
         </div>
@@ -96,7 +96,7 @@ const Navbar = () => {
       >
         {/* Logo & Close */}
         <div className="flex items-center justify-between px-4 py-4 border-b border-gray-700">
-          <img src={logo} alt="Logo" className="h-14" />
+          <img src={logo} alt="Logo" className="h-10" />
           <button
             onClick={() => setMenuOpen(false)}
             className="text-white text-2xl hover:text-red-500"

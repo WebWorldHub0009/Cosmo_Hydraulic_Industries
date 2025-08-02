@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaWrench,
-  FaCogs,
   FaTools,
   FaLink,
   FaAngleDoubleRight,
@@ -71,16 +70,16 @@ const FuturisticSlider = () => {
     const container = containerRef.current;
     if (!container) return;
 
-    const scrollAmount = container.offsetWidth / 3 + 20;
-
-    const interval = setInterval(() => {
+    const slide = () => {
+      const scrollAmount = window.innerWidth < 768 ? container.offsetWidth : container.offsetWidth / 2;
       if (container.scrollLeft + scrollAmount >= container.scrollWidth) {
         container.scrollTo({ left: 0, behavior: "smooth" });
       } else {
         container.scrollBy({ left: scrollAmount, behavior: "smooth" });
       }
-    }, 3000);
+    };
 
+    const interval = setInterval(slide, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -88,13 +87,15 @@ const FuturisticSlider = () => {
   const scrollLeft = () => {
     const container = containerRef.current;
     if (!container) return;
-    container.scrollBy({ left: -(container.offsetWidth / 2), behavior: "smooth" });
+    const scrollAmount = window.innerWidth < 768 ? container.offsetWidth : container.offsetWidth / 2;
+    container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
   };
 
   const scrollRight = () => {
     const container = containerRef.current;
     if (!container) return;
-    container.scrollBy({ left: container.offsetWidth / 2, behavior: "smooth" });
+    const scrollAmount = window.innerWidth < 768 ? container.offsetWidth : container.offsetWidth / 2;
+    container.scrollBy({ left: scrollAmount, behavior: "smooth" });
   };
 
   return (
@@ -104,7 +105,6 @@ const FuturisticSlider = () => {
         backgroundImage: `url(${bgOverlay})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
       }}
     >
       {/* Section Heading */}
@@ -129,10 +129,10 @@ const FuturisticSlider = () => {
 
       {/* Slider Container */}
       <div className="relative">
-        {/* Left Button */}
+        {/* Left Button (Hidden on Mobile) */}
         <button
           onClick={scrollLeft}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#1b1f23]/80 text-blue-400 p-3 rounded-full shadow-lg hover:scale-110 hover:text-white hover:bg-blue-500 transition-all duration-300 z-20"
+          className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 bg-[#1b1f23]/80 text-blue-400 p-3 rounded-full shadow-lg hover:scale-110 hover:text-white hover:bg-blue-500 transition-all duration-300 z-20"
         >
           <FaChevronLeft />
         </button>
@@ -147,7 +147,7 @@ const FuturisticSlider = () => {
               key={index}
               onClick={() => setSelected(item)}
               whileHover={{ scale: 1.03 }}
-              className="snap-start min-w-[90%] sm:min-w-[48%] lg:min-w-[32%] cursor-pointer bg-[#1c1c1e] border border-blue-500/10 backdrop-blur-xl rounded-2xl hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:border-blue-400 transition-all duration-500 ease-in-out"
+              className="snap-start min-w-[100%] sm:min-w-[48%] lg:min-w-[32%] cursor-pointer bg-[#1c1c1e] border border-blue-500/10 backdrop-blur-xl rounded-2xl hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:border-blue-400 transition-all duration-500 ease-in-out"
             >
               <div className="relative group overflow-hidden rounded-t-2xl">
                 <img
@@ -168,10 +168,10 @@ const FuturisticSlider = () => {
           ))}
         </div>
 
-        {/* Right Button */}
+        {/* Right Button (Hidden on Mobile) */}
         <button
           onClick={scrollRight}
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#1b1f23]/80 text-blue-400 p-3 rounded-full shadow-lg hover:scale-110 hover:text-white hover:bg-blue-500 transition-all duration-300 z-20"
+          className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 bg-[#1b1f23]/80 text-blue-400 p-3 rounded-full shadow-lg hover:scale-110 hover:text-white hover:bg-blue-500 transition-all duration-300 z-20"
         >
           <FaChevronRight />
         </button>
@@ -228,11 +228,6 @@ const FuturisticSlider = () => {
         .slider-track {
           -ms-overflow-style: none;
           scrollbar-width: none;
-        }
-        @media (min-width: 1024px) {
-          .slider-track > div {
-            flex: 0 0 calc(33.333% - 16px);
-          }
         }
       `}</style>
     </div>

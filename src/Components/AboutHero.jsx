@@ -51,18 +51,18 @@ const AboutHero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
             viewport={{ once: true }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap gap-4 md:gap-4 "
           >
             <Link
               to="/certificates"
-              className="cursor-pointer flex items-center gap-2 bg-[#3b82f6] hover:bg-[#2563eb] text-white px-6 py-3 rounded-full font-semibold shadow-lg shadow-blue-500/20 transition-all duration-300"
+              className="cursor-pointer flex items-center gap-2 bg-[#3b82f6] hover:bg-[#2563eb] text-white px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold shadow-lg shadow-blue-500/20 transition-all duration-300"
             >
               <FaInfoCircle />
               Learn More
             </Link>
             <Link
               to="/contact"
-              className="cursor-pointer flex items-center gap-2 bg-transparent border-2 border-[#3b82f6] hover:bg-[#3b82f6] hover:text-white text-[#3b82f6] px-6 py-3 rounded-full font-semibold transition-all duration-300"
+              className="cursor-pointer flex items-center gap-2 bg-transparent border-2 border-[#3b82f6] hover:bg-[#3b82f6] hover:text-white text-[#3b82f6] px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold transition-all duration-300"
             >
               <FaPhoneAlt />
               Contact Us
