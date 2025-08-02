@@ -54,12 +54,12 @@ const ProductHero = () => {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
-          <Link
-            to="/products"
+          <a
+            href="#products"
             className="bg-blue-600 hover:bg-blue-700 px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base text-white font-medium transition duration-300"
           >
             View Products
-          </Link>
+          </a>
           <Link
             to="/contact"
             className="bg-transparent border border-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base text-blue-400 font-medium transition duration-300"

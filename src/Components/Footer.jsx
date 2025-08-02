@@ -70,7 +70,7 @@ export default function Footer() {
             {[
               ["Home", "/"],
               ["About", "/about"],
-              ["Raw Materials", "/raw-materials"],
+              ["Products", "/products"],
               ["Showcase", "/showcase"],
               ["Contact", "/contact"],
               ["Documents", "/documents"],
@@ -113,7 +113,7 @@ export default function Footer() {
             {services.map((item, i) => (
               <li key={i}>
                 <Link
-                  to="/raw-materials"
+                  to="/products"
                   className="hover:text-blue-700 transition duration-300"
                 >
                   {item}

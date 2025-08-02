@@ -221,7 +221,7 @@ const ProductPage = () => {
     <>
       <ProductHero />
 
-      <section className="w-full min-h-screen bg-[#1b1f23] text-white px-4 py-20 md:px-10 lg:px-20">
+      <section id="products" className="w-full min-h-screen bg-[#1b1f23] text-white px-4 py-20 md:px-10 lg:px-20">
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-[#3b82f6]">
             Premium{" "}

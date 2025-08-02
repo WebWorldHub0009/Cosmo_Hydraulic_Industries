@@ -8,16 +8,18 @@ import {
   FaAngleDoubleRight,
   FaCompressArrowsAlt,
   FaTimes,
+  FaChevronLeft,
+  FaChevronRight,
 } from "react-icons/fa";
 import { BsFillGearFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
 import img1 from "../assets/images/hero/bg1.jpg";
-import img2 from "../assets/images/hero/bg2.png";
-import img3 from "../assets/images/hero/bg4.png";
-import img4 from "../assets/images/hero/bg5.png";
-import img5 from "../assets/images/hero/bg1.jpg";
-import img6 from "../assets/images/hero/bg2.png";
+import img2 from "../assets/images/ms.jpg";
+import img3 from "../assets/images/msadapters.jpg";
+import img4 from "../assets/images/mselbow.jpg";
+import img5 from "../assets/images/brasssheet.jpg";
+import img6 from "../assets/images/clamps.jpg";
 import bgOverlay from "../assets/images/sliderbg.jpg";
 
 const sliderItems = [
@@ -82,6 +84,19 @@ const FuturisticSlider = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Manual Scroll
+  const scrollLeft = () => {
+    const container = containerRef.current;
+    if (!container) return;
+    container.scrollBy({ left: -(container.offsetWidth / 2), behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    const container = containerRef.current;
+    if (!container) return;
+    container.scrollBy({ left: container.offsetWidth / 2, behavior: "smooth" });
+  };
+
   return (
     <div
       className="relative w-full py-20 px-4 text-white overflow-hidden"
@@ -92,8 +107,7 @@ const FuturisticSlider = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="absolute inset-0 z-0" />
-
+      {/* Section Heading */}
       <div className="relative z-10 text-center mb-14">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
@@ -113,36 +127,54 @@ const FuturisticSlider = () => {
         </motion.p>
       </div>
 
-      <div
-        ref={containerRef}
-        className="relative z-10 flex gap-6 overflow-x-auto px-4 pb-4 scroll-smooth slider-track snap-x snap-mandatory"
-      >
-        {sliderItems.map((item, index) => (
-          <motion.div
-            key={index}
-            onClick={() => setSelected(item)}
-            whileHover={{ scale: 1.03 }}
-            className="snap-start min-w-[90%] sm:min-w-[48%] lg:min-w-[32%] cursor-pointer bg-[#1c1c1e] border border-blue-500/10 backdrop-blur-xl rounded-2xl hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:border-blue-400 transition-all duration-500 ease-in-out"
-          >
-            <div className="relative group overflow-hidden rounded-t-2xl">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/60 transition-colors duration-500" />
-            </div>
-            <div className="p-5 space-y-2">
-              <div className="flex items-center gap-3 text-xl font-semibold text-white">
-                <span className="text-blue-400 text-2xl">{item.icon}</span>
-                <span>{item.title}</span>
+      {/* Slider Container */}
+      <div className="relative">
+        {/* Left Button */}
+        <button
+          onClick={scrollLeft}
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#1b1f23]/80 text-blue-400 p-3 rounded-full shadow-lg hover:scale-110 hover:text-white hover:bg-blue-500 transition-all duration-300 z-20"
+        >
+          <FaChevronLeft />
+        </button>
+
+        {/* Slider Items */}
+        <div
+          ref={containerRef}
+          className="relative z-10 flex gap-6 overflow-x-auto px-4 pb-4 scroll-smooth slider-track snap-x snap-mandatory"
+        >
+          {sliderItems.map((item, index) => (
+            <motion.div
+              key={index}
+              onClick={() => setSelected(item)}
+              whileHover={{ scale: 1.03 }}
+              className="snap-start min-w-[90%] sm:min-w-[48%] lg:min-w-[32%] cursor-pointer bg-[#1c1c1e] border border-blue-500/10 backdrop-blur-xl rounded-2xl hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:border-blue-400 transition-all duration-500 ease-in-out"
+            >
+              <div className="relative group overflow-hidden rounded-t-2xl">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/60 transition-colors duration-500" />
               </div>
-              <p className="text-gray-400 text-sm line-clamp-3">
-                {item.desc}
-              </p>
-            </div>
-          </motion.div>
-        ))}
+              <div className="p-5 space-y-2">
+                <div className="flex items-center gap-3 text-xl font-semibold text-white">
+                  <span className="text-blue-400 text-2xl">{item.icon}</span>
+                  <span>{item.title}</span>
+                </div>
+                <p className="text-gray-400 text-sm line-clamp-3">{item.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Right Button */}
+        <button
+          onClick={scrollRight}
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#1b1f23]/80 text-blue-400 p-3 rounded-full shadow-lg hover:scale-110 hover:text-white hover:bg-blue-500 transition-all duration-300 z-20"
+        >
+          <FaChevronRight />
+        </button>
       </div>
 
       {/* Modal */}
@@ -170,7 +202,7 @@ const FuturisticSlider = () => {
               <img
                 src={selected.image}
                 alt={selected.title}
-                className="w-full h-56 object-cover rounded-lg mb-4"
+                className="w-full h-56 object-contain rounded-lg mb-4"
               />
               <div className="flex items-center gap-3 text-xl font-semibold text-white mb-2">
                 <span className="text-blue-400 text-2xl">{selected.icon}</span>
@@ -188,7 +220,7 @@ const FuturisticSlider = () => {
         )}
       </AnimatePresence>
 
-      {/* Inline CSS */}
+      {/* Hide scrollbar */}
       <style>{`
         .slider-track::-webkit-scrollbar {
           display: none;

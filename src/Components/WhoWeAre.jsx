@@ -13,7 +13,7 @@ const services = [
     description:
       "We design and implement efficient hydraulic systems tailored to your manufacturing needs.",
     image: img1,
-    link: "/services/engineering",
+    link: "/products",
     layout: "image-top",
   },
   {
@@ -21,7 +21,7 @@ const services = [
     description:
       "Advanced machinery and skilled technicians produce top-tier components with unmatched accuracy.",
     image: img2,
-    link: "/services/manufacturing",
+    link: "/products",
     layout: "text-top",
   },
   {
@@ -29,7 +29,7 @@ const services = [
     description:
       "Strict multi-level quality checks ensure every product meets international standards.",
     image: img3,
-    link: "/services/quality",
+    link: "/products",
     layout: "image-top",
   },
 ];
@@ -49,10 +49,10 @@ const WhoWeAre = () => {
             </h2>
           </div>
           <Link
-            to="/services"
+            to="/products"
             className="mt-6 md:mt-0 inline-flex items-center bg-blue-900 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-800 transition"
           >
-            View All Services →
+            View All Products →
           </Link>
         </div>
 
