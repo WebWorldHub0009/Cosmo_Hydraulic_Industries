@@ -66,7 +66,7 @@ export default function Footer() {
         {/* About Cosmo Hydraulic Industries */}
         <div className="flex flex-col space-y-3 mt-2">
           <img src={logo} alt="Cosmo Hydraulic Industries Logo" className="w-[150px] md:w-[200px]" />
-          <h4 className="text-blue-300 font-semibold mt-6">About Cosmo Hydraulic</h4>
+          <h4 className="text-blue-300 text-2xl font-semibold mt-6">About Cosmo Hydraulic</h4>
           <p className="leading-relaxed text-gray-300">
             Cosmo Hydraulic Industries, based in Surajpur, Greater Noida, is a trusted name in
             high-performance hydraulic fittings and industrial solutions — offering precision
@@ -76,7 +76,7 @@ export default function Footer() {
 
         {/* Quick Links + Contact */}
         <div>
-          <h4 className="text-blue-300 font-semibold mb-4">Quick Links</h4>
+          <h4 className="text-blue-300 text-2xl font-semibold mb-4">Quick Links</h4>
           <ul className="space-y-2 text-gray-300">
             {[
               ["Home", "/"],
@@ -94,7 +94,7 @@ export default function Footer() {
             ))}
           </ul>
 
-          <h4 className="mt-6 text-blue-300 font-semibold">Contact</h4>
+          <h4 className="mt-6 text-blue-300 text-2xl font-semibold">Contact</h4>
           <ul className="mt-2 space-y-2 text-gray-300">
             <li>
               <a
@@ -119,7 +119,7 @@ export default function Footer() {
 
         {/* Raw Materials */}
         <div>
-          <h4 className="text-blue-300 font-semibold mb-4">Raw Materials</h4>
+          <h4 className="text-blue-300 text-2xl font-semibold mb-4">Raw Materials</h4>
           <ul className="space-y-2 text-gray-300">
             {services.map((item, i) => (
               <li key={i}>
@@ -133,7 +133,7 @@ export default function Footer() {
 
         {/* Address & Socials */}
         <div>
-          <h4 className="text-blue-300 font-semibold mb-4">Our Address</h4>
+          <h4 className="text-blue-300 text-2xl font-semibold mb-4">Our Address</h4>
           <address className="not-italic leading-relaxed text-gray-300 mb-4">
             Cosmo Hydraulic Industries<br />
             Near ARE Metal, I-149 Site C<br />

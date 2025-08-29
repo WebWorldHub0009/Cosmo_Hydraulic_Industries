@@ -9,6 +9,7 @@ import Products from "./Pages/Products"
 import Gallery from "./Pages/Gallery"
 import Certificates from "./Pages/Certificates"
 import Contact from './Pages/Contact'
+import ProductDetail from "./Pages/ProductDetail"
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/gallery" element={<Gallery/>}/>
         <Route path="/certificates" element={<Certificates/>}/>
         <Route path="/contact" element={<Contact/>}/>
+        <Route path="/products/:slug" element={<ProductDetail />} />
       </Routes>
       <Footer/>
       <FloatingButtons/>

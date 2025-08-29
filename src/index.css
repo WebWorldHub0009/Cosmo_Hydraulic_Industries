@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 html{
   scroll-behavior: smooth;
 }
@@ -30,3 +31,77 @@ h1, h2 {
   }
 }
 
+.marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee {
+  display: inline-flex; /* keep items in a row */
+  white-space: nowrap;
+  animation: marquee 170s linear infinite;
+  gap: 1.5rem; /* spacing between items */
+}
+
+.marquee-item {
+  min-width: 280px;
+  max-width: 280px;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.marquee-item:hover {
+  transform: scale(1.05);
+}
+
+.marquee-item img {
+  height: 12rem; /* 48 */
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.marquee-item-content {
+  padding: 1.25rem; /* 5 */
+}
+
+.marquee-item-content h3 {
+  font-size: 1.125rem; /* lg */
+  font-weight: 600;
+  color: #111827; /* gray-900 */
+}
+
+.marquee-item-content p {
+  font-size: 0.875rem; /* sm */
+  color: #4B5563; /* gray-600 */
+  margin-top: 0.25rem; /* mt-1 */
+}
+
+.marquee-item-content .icons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.marquee-item-content button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #1E40AF; /* blue-800 */
+  color: white;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.marquee-item-content button:hover {
+  background-color: #1E3A8A; /* blue-900 */
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
